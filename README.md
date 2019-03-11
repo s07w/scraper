@@ -1,2 +1,2 @@
 # scraper
-A NYT web scraper using MongoDB
+A web scraper using MongoDB
