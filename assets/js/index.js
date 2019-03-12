@@ -14,7 +14,7 @@ $(document).ready( () => {
     function initPage() {
         // empty article container/run AJAX request for unsaved headlines
         articleContainer.empty();
-        $.get("/api/headlines?saved=false").then(date => {
+        $.get("/api/headlines?saved=false").then(data => {
             //if there are articles, render them to DOM
             console.log(data);
 
@@ -32,7 +32,7 @@ $(document).ready( () => {
         const articlePanels = [];
         // pass each JSON object to function createPanel
         for (let i = 0; i < articles.length; i++) {
-            articlesPanels.push(createPanel(articles[i]));
+            articlePanels.push(createPanel(articles[i]));
         }
 
         //createPanel stored in HTML in array of articlePanels
@@ -44,11 +44,10 @@ $(document).ready( () => {
         //takes single JSON object to create a jQuery element composed of formatted HTML
         let panel = $(
             `<div id="${article._id}" class="panel panel-default panel-margin">
-            <div id="headline-panel" class="panel-heading clearfix">
-              <p class="panel-title align-middle"><a href="${article.url}" target="_blank">${article.title}</a></p>
-              <button type="button" class="btn btn-success pull-right btn-save">Save Article</button>
-  
-            </div>
+                <div id="headline-panel" class="panel-heading clearfix">
+                    <p class="panel-title align-middle"><a href="${article.url}" target="_blank">${article.title}</a></p>
+                    <button type="button" class="btn btn-success pull-right btn-save">Save Article</button>
+                </div>
             <div class="panel-body">
               <div class="col-lg-2 col-md-2 col-sm-2 news-thumb" >
               <a href="${article.url}" target="_blank"><img width="200px" class="img-responsive img-thumbnail news-thumb" src="${article.imgUrl}" alt="${article.title}" /></a>

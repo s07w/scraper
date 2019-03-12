@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3000;
 
 //initializes express
 const app = express();
-
 app.use(logger('dev'));
 
 //handlebars
@@ -29,7 +28,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 //Routes
-const routes = require("./routes");
+const routes = require("./routes/");
 //all requests go through routes
 app.use(routes);
 
@@ -42,5 +41,5 @@ mongoose.connect(MONGODB_URI);
 
 // start server
 app.listen(PORT, () => {
-    console.log("listening on PORT: ${PORT}");
+    console.log(`listening on PORT: ${PORT}`);
 });

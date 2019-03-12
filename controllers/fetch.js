@@ -1,6 +1,6 @@
 //controller that fetches headlines
 const db = require("../models");
-const scrape = require("../scripts/scrape");
+const scrape = require("../scripts/scraper");
 
 module.exports = {
     scrapeHeadlines: function(req, res) {

@@ -17,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/s07w/scraper/issues"
   },
-  "homepage": "https://github.com/s07w/scraper#readme"
+  "homepage": "https://github.com/s07w/scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootbox": "^5.0.1",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "logger": "0.0.1",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0",
+    "yarn": "^1.13.0"
+  }
 }

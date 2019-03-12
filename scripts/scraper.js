@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const scrape = function() {
+const scraper = function() {
     return axios.get("https://www.vulture.com/comedy/")
     .then(res => {
         const $ = cheerio.load(res.data);
@@ -31,4 +31,4 @@ const scrape = function() {
     });
 };
 
-module.exports = scrape;
+module.exports = scraper;
